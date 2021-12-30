@@ -1,0 +1,127 @@
+body {
+    height: 100%;
+    background: url('https://i.pinimg.com/originals/5a/a1/fe/5aa1fe17a4930f23dbcfa98f603de8fd.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 상단 우측 옵션들 */
+.nav-op {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.nav-op li {
+    margin-right: 24px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.nav-op li .img-option {
+    width: 28px;
+    height: 28px;
+}
+
+.nav-op li .img-user {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.nav-op li:nth-child(-n+2) {
+    margin-top: 4px;
+}
+
+.nav-op li:nth-child(-n+2) a {
+    color: white;
+}
+
+.nav-op li:nth-child(-n+2) a:hover {
+    border-bottom: 1px solid white;
+}
+
+/* 구글 로고 */
+.sec-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.sec-logo .img-logo {
+    border-radius: 20px;
+    width: 420px;
+    height: 170px;
+}
+
+.sec-inp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec-inp .inp-search {
+    box-sizing: border-box;
+    width: 540px;
+    height: 44px;
+    font-size: 16px;
+    border: none;
+    border-radius: 24px;
+    margin-top: 30px;
+    padding: 0 50px 0 50px;
+    background-image: url('./assets/images/search.png'), url('./assets/images/mic.png');
+    background-repeat: no-repeat;
+    background-size: 22px, 22px;
+    background-position: 3% 50%, 97% 50%;
+}
+
+.sec-inp .inp-search:focus {
+    outline: none;
+}
+
+/* 바로가기 */
+.imed-go {
+    width: 540px;
+    margin: 0 auto;
+}
+
+.imed-go ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imed-go ul li {
+    width: 120px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin-right: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    color: white;
+}
+
+.imed-go ul li:hover {
+    border: 3px solid rgba(0, 100, 255, 0.4);
+}
+
+.imed-go ul li div {
+    width: 48px;
+    height: 48px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.img-plus {
+    border-radius: 50%;
+}
+
