@@ -55,6 +55,14 @@ body {
     height: 170px;
 }
 
+fieldset {
+    border: none;
+}
+
+fieldset legend {
+    display: none;
+}
+
 .sec-inp {
     display: flex;
     justify-content: center;
@@ -104,6 +112,11 @@ body {
     font-size: 12px;
     cursor: pointer;
     color: white;
+}
+
+.imed-go ul li a {
+    color: white;
+    align-items: center;
 }
 
 .imed-go ul li:hover {
