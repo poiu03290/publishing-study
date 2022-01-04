@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../멋쟁이사자처럼/CSS/실습/9일차(font flex modal card 폰트어섬)/fontawesome/css/all.css">
+    <title>Document</title>
+    <style>
+        @keyframes move {
+            0% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(690px, 0);
+            }
+            50% {
+                transform: translate(690px, 234px);
+            }
+            75% {
+                transform: translate(0, 234px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+        html,body {height:100%;}
+        body {
+            background:url('./assets/images/modal_back.jpg') no-repeat center center/cover;
+        }
+
+        ul,li {
+            margin:0; padding:0;
+            list-style:none;
+        }
+
+        a {
+            color:inherit;
+            text-decoration:none;
+        } 
+
+        .dimm {
+            position:fixed;
+            background-color:rgba(55, 55, 59, 0.7);
+            left:0;top:0;right:0;bottom:0;
+        }
+
+        .modalWrap {
+            background:#fff;
+            border-radius:10px;
+            padding:20px;
+            position:fixed;
+            width:700px;
+            height:40vh;
+            left:50%;
+            top:50%;
+            transform:translate(-50%, -50%);
+            /* overflow: hidden; */
+        }
+
+        .modalWrap:hover {
+            box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 50%);
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            bottom: -150px;
+            right: 40px;
+        }
+
+        .modalWrap:hover img {
+            transform: translateY(-200px);
+            transition: 1s;
+        }
+
+        .ball {
+            width:50px;height:50px;
+            border-radius:50%;
+            background:olivedrab;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: move 7s infinite linear;
+        }
+
+        .indicator {
+            width: calc(100% * 3);
+            display: flex;
+            flex-direction: row;
+            transition: 1s;
+        }
+
+        .indicator li {
+            margin: 0 200px;
+            text-align: center;
+        }
+
+        .indicator li:nth-child(1) {
+            width: calc(100% / 3);
+        }
+
+        .indicator li:nth-child(2) {
+            width: calc(100% / 3);
+        }
+
+        .indicator li:nth-child(3) {
+            width: calc(100% / 3);
+        }
+
+        #radio2:checked ~ ul {
+            margin-left: -100%;
+        }
+
+        #radio3:checked ~ ul {
+            margin-left: -200%;
+        }
+
+        /* 버튼 스타일링 */
+        .btn, .btnClose {
+            padding: 16px 24px;
+            font-size: 30px;
+            color: white;
+            background-color: black;
+            border: none;
+            opacity: 0.2;
+            cursor: pointer;
+        }     
+
+        .prev {
+            position: fixed;
+            left: -10%;
+            top: 40%;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+
+        .next {
+            position: fixed;
+            right: -10%;
+            top: 40%;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        /* 닫기버튼 */
+        .relative {
+            position: relative;
+        }
+
+        .btnClose {
+            position: absolute;
+            top: -200px;
+            left: 320px;
+            border-radius: 50%;
+        }
+
+        /* 슬라이드 버튼 */
+        input[type=radio] {
+            display: none;
+        }
+
+        .bullet {
+            position: absolute;
+            bottom:20px;
+            left:0;
+            right:0;
+            text-align:center;
+            z-index:10;
+        }
+
+        .bullet label {
+            display: inline-block;
+            border: none;
+            border-radius: 50%;
+            background-color: gray;
+            opacity: 0.3;
+            margin: 8px;
+            padding: 8px;
+            cursor: pointer;
+        }
+        
+        #radio1:checked ~ .bullet label:nth-child(1),
+        #radio2:checked ~ .bullet label:nth-child(2),
+        #radio3:checked ~ .bullet label:nth-child(3) {
+            background-color: gray;
+            opacity: 0.9;
+        }
+
+        #radio1:hover ~ .bullet label:nth-child(1),
+        #radio2:hover ~ .bullet label:nth-child(2),
+        #radio3:hover ~ .bullet label:nth-child(3) {
+            background-color: gray;
+            opacity: 0.9;
+        }
+
+    </style>
+</head>
+<body> 
+    <div class="dimm"></div>
+    <div class="modalWrap"> 
+        <article class="contents">
+            MODAL
+        </article>
+        <!-- 4. animation : ball이 modalWrap을 반복해서 도는 애니메이션 만들기 -->
+        <!-- 5. animation : 구름 애니메이션, dimm과 modalWrap 사이로 지나가기 반복해서, 서로 속도가 다르게 -->
+        <div class="ball"></div>
+        <img src="./assets/images/react.png" alt="react">
+        <!-- 6. transition : modalWrap에 마우스를 올렸을때, box-shadow나오게 만들기 -->
+        <!-- 7. transition : modalWrap에 마우스를 올렸을때, 캐릭터가 아래에서 위로 나오기 -->
+        <a href="javascript:void(0);" class="btn prev"><i class="fas fa-chevron-left"></i> PREV</a>
+        <a href="javascript:void(0);" class="btn next">NEXT <i class="fas fa-chevron-right"></i></a>
+        <input type="radio" id="radio1" name="radio" checked>
+        <!-- <label for="radio1"></label> -->
+        <input type="radio" id="radio2" name="radio">
+        <!-- <label for="radio2"></label> -->
+        <input type="radio" id="radio3" name="radio">
+        <!-- <label for="radio3"></label> -->
+        <ul class="indicator">
+            <li>
+                <a href="#">
+                    <span>1번 슬라이드</span>    
+                </a>
+            </li> 
+            <li>
+                <a href="#">
+                    <span>2번 슬라이드</span>    
+                </a>
+            </li> 
+            <li>
+                <a href="#">
+                    <span>3번 슬라이드</span>    
+                </a>
+            </li> 
+        </ul>
+        <div class="relative">
+            <button type="button" class="btnClose">
+                X
+            </button>
+        </div>
+        <p class="bullet">
+            <label for="radio1"></label>
+            <label for="radio2"></label>
+            <label for="radio3"></label>
+          </p>
+    </div>
+</body>
+</html>
