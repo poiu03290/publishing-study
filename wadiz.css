@@ -1,0 +1,87 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list-warp {
+    width: 300px;
+    height: 340px;
+    margin-right: 50px;   
+}
+
+.list-img {
+    width: 100%;
+    height: 200px;
+    background-image: url('https://cdn1.wadiz.kr/images/20211210/1639120225457.jpg/wadiz/optimize');
+}
+
+/* 제목 */
+.list-header {
+    margin: 8px 0 4px 0;
+}
+
+/* 카테고리 회사 */
+.list-co-info {
+    color: #90949C;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0 0 4px 0;
+}
+
+.list-co {
+    position: relative;
+    margin-left: 6px;
+}
+
+.list-co::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: -12px;
+    margin: 0 6px;
+    background-color: #dadce0;
+    width: 1px;
+    height: 10px;
+    vertical-align: top;
+}
+
+/* 프로그래스 바 */
+.list-progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: gray;
+}
+
+.list-progress {
+    width: calc(100/100*30%);
+    height: 4px;
+    background-color: #00B2B2;
+}
+
+/* info부분 */
+.list-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.list-info strong {
+    color: #00B2B2;
+} 
+
+.list-sales {
+    color: #90949C;
+    font-size: 14px;
+}
+
+.list-sales::before {
+    content: "·";
+    margin-right: 4px;
+}
+
+.list-day-info {
+    color: #90949C;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 2px;
+}

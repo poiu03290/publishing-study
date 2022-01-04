@@ -1,0 +1,65 @@
+h1 {
+    text-align: center;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+input[type=radio] + label {
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    background-color: pink;
+    margin: 20px;
+    padding: 20px;
+}
+
+input[type=radio]:checked + label {
+    background-color: #bb7bf7;
+}
+
+input[type=radio]:hover + label {
+    background-color:#bb7bf7;
+}
+
+/* 체크박스 */
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox] + label {
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    background-color: pink;
+    margin: 20px;
+    padding: 20px;
+}
+
+input[type=checkbox]:checked + label {
+    background-color: #bb7bf7;
+}
+
+input[type=checkbox]:hover + label {
+    background-color:#bb7bf7;
+}
+
+/* 파일선택 */
+input[type=file] {
+    display: none;
+}
+
+input[type=file] + label {
+    display: inline-block;
+    color: #fff;
+    background-color: #999999;
+    cursor: pointer;
+    width: 100px;
+    height: 70px;
+    padding-top: 30px;
+    text-align: center;
+}
+input[type=file]:hover + label {
+    background-color:rgba(0, 0, 0, 0.6);
+}
