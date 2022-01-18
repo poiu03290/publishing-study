@@ -1,0 +1,37 @@
+@charset "utf-8";
+@import 'variables','reset','target'; 
+
+body {
+    font-family:sans-serif;   
+    background:url($url + 'spiderman.jpg') no-repeat fixed top right/cover;
+}   
+
+.subHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    border: 1px solid #ddd;
+    background-color: #f1f1f1;
+    padding: 0 10px;
+
+    .btnBack {
+        font-size:20px;
+        background-color: aqua;
+    }
+
+    .space {
+        flex-grow: 1;
+        height: 30px;
+        background-color: red;
+    }
+    .title {
+        padding: 0 10px;
+        font-weight: 600;
+    }
+
+    .btnOption {
+        font-size: 30px;
+        background-color: oldlace;
+    }
+}
