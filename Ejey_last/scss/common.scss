@@ -199,5 +199,23 @@ body {
     }
 } 
 
+.dimm {
+    position: fixed;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba($color: black, $alpha: 0.7);
+    z-index: 100;
+    display: none;
+}
+.modal {
+    z-index: 101;
+    display: none;
+    @include border(20);
+    @include modal(500, 400, #fff);
+}
 
-
+.modal2 {
+    z-index: 101;
+    @include modal(100vw, 50vh, #fff);
+    left: 0; bottom: -70vh; top: auto; transform: translate(0, 0);
+}

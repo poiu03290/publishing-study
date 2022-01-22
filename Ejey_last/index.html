@@ -1,15 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Einsmedia</title>
     <link rel="stylesheet" href="./css/common.css">
+    <script src="./lib/jquery-1.11.2.js"></script>
+    <script>
+        $(function() {
+            const $btnHam = $('.btnHam');
+            const $modal = $('.modal')
+            const $modal2 = $('.modal2')
+            const $dimm = $('.dimm')
+            $btnHam.click(function() {
+                // $modal.css({
+                //     display: 'flex',
+                //     backgroundColor: 'olive',
+                // })
+                // $modal.fadeIn(500);
+                $dimm.fadeIn(500);
+                $modal2.animate({
+                    bottom: 0
+                }, 500)
+            })
+            $dimm.click(function() {
+                // $(this).css('display', 'none')
+                // $modal.fadeOut(100)
+                $dimm.fadeOut(100);
+                $modal2.animate({
+                    bottom: '-70vh',
+                }, 100)
+            })
+        })
+    </script>
 </head>
 <body>
-    <div class="test">TEST</div>
-    <header class="pageHeader">
+    <header class="pageHeader">  
         <h1>
             <a href="/">
                 <!-- IR 기법 -->
@@ -101,5 +128,30 @@
             </div>
         </div>
     </section>
+    <div class="dimm"></div>
+
+    <div class="modal">
+        <section class="inner">
+            <header>
+                <h2>알립니다.</h2>
+                <p>설명글</p>
+            </header>
+            <div class="contents">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos quaerat amet blanditiis voluptas, corporis ipsum ad eum minima rem sed ut, praesentium, doloribus enim quidem? Ducimus harum quam eveniet quae.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae vel doloribus, nobis illo a mollitia nesciunt voluptatem ipsa quos praesentium eos ad labore hic incidunt laboriosam velit maxime autem quo!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ipsum, necessitatibus distinctio amet fuga sed quos sapiente est ex inventore modi, vel eos quisquam odit commodi deserunt rem eius odio.
+                </p>
+            </div>
+        </section>
+        MODAL
+    </div>
+    <div class="modal2">
+        MODAL2
+    </div>
 </body>
 </html>
